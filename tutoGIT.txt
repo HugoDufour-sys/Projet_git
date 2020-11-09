@@ -1,0 +1,58 @@
+Dans le cas ou avez une branch master, et plusieurs branch.
+Vous faites les modifs en Local sur une branch et commitez tout. Il ne doit pas y avoir de modification non versionnées:
+
+git add -u ou git add .
+
+ou
+
+git add “nomdufichier” 
+#Le -u permet de add tous les fichiers “trackés” par git et le add . , ajoute tous les fichiers modifiés connus ou non de git. 
+Préférence pour le git add -u
+
+git commit -m “votrecommentaire” 
+#Pour mettre à jour votre local
+
+git push 
+# Pour mettre à jour sur le GitHub
+
+
+
+
+
+
+Une fois vos modifs en Local à jour pour le GitHub, allez sur le master.
+
+git switch master 
+#Pour changer de branch
+ 
+git pull 
+#Pour mettre à jour votre master local par rapport à GitHub
+
+git merge “votreBranche” 
+# Pour merge votre branch sur le master, toujours en local. Régler les potentiels conflits. 
+
+Phpstrom : https://www.jetbrains.com/help/phpstorm/resolve-conflicts.html
+
+VScode :https://stackoverflow.com/questions/38216541/visual-studio-code-how-to-resolve-merge-conflicts-with-git 
+
+git push # Pour mettre à jour le master sur le GitHub
+
+
+
+
+
+Maintenant votre master en local et sur Github est à jour,
+Ensuite changer de branch pour reconstruire votre branche avec le master. Votre branche référencera le même commit que master.
+
+git switch votreBranche
+
+git rebase master # Permet de reconstruire votre branch avec le master en local
+
+git push --force # Permet de mettre à jour votre branch sur le GitHub
+
+Pour se rendre compte de l’état actuel du dépôt
+git log --oneline --all --graph
+#Le --oneline permet de n’avoir que le titre du commit
+#Le --all permet de d’avoir toutes les branches (pas que celle en cours)
+#Le --graph permet d’afficher les branches sous forme de graphique
+
